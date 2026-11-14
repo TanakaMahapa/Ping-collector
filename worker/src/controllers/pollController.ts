@@ -38,12 +38,12 @@ export async function runPoll() {
   const url = process.env.SUPABASE_URL, key = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!url || !key) { throw new Error('Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY'); }
   const store = new SupabaseStore(url, key);
-  const only = process.env.ONLY?.split(',').map(s => s.trim());
+  const only = (process.env.ONLY ?? '').split(',').map(s => s.trim()).filter(Boolean); // empty input = run everything
   const force = process.env.FORCE === '1';
 
   const due: Adapter[] = [];
   for (const a of adapters) {
-    if (only && !only.includes(a.id)) continue;
+    if (only.length && !only.includes(a.id)) continue;
     if (!a.enabled()) { log(`${a.id}: disabled (missing env)`); continue; }
     const last = await store.lastRunStart(a.id);
     if (force || !last || Date.now() - last.getTime() >= a.intervalMinutes * 60_000 - SLACK_MS) due.push(a);
