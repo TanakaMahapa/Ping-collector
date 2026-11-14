@@ -1,0 +1,28 @@
+name: poll-jobs
+on:
+  schedule: [{ cron: '*/5 * * * *' }]   # free and unlimited on a PUBLIC repo; runs can start a few minutes late
+  workflow_dispatch:
+    inputs:
+      only:  { description: 'Comma-separated adapter ids (optional)', required: false }
+      force: { description: 'Ignore intervals and run now (1)', required: false }
+concurrency: { group: poll-jobs, cancel-in-progress: false }
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    defaults: { run: { working-directory: worker } }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm, cache-dependency-path: worker/package-lock.json }
+      - run: npm ci
+      - run: npm run build
+      - run: node dist/run.js
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          ADZUNA_APP_ID: ${{ secrets.ADZUNA_APP_ID }}
+          ADZUNA_APP_KEY: ${{ secrets.ADZUNA_APP_KEY }}
+          PING_USER_AGENT: ${{ secrets.PING_USER_AGENT }}
+          ONLY: ${{ github.event.inputs.only }}
+          FORCE: ${{ github.event.inputs.force }}
