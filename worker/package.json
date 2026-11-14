@@ -1,0 +1,22 @@
+{
+  "name": "ping-worker",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "test": "tsc && node --test \"dist/test/*.test.js\"",
+    "poll": "node dist/run.js",
+    "companies:import": "node dist/scripts/import-companies.js ../data/companies.csv"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "@types/node": "^20.0.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

@@ -1,0 +1,36 @@
+import { createClient } from '@supabase/supabase-js';
+import { fetchJson, pool } from '../lib/http.js';
+
+const probe: Record<string, (s: string) => Promise<unknown>> = {
+  greenhouse: s => fetchJson(`https://boards-api.greenhouse.io/v1/boards/${s}`, { retries: 1 }),
+  lever: async s => { if (!Array.isArray(await fetchJson(`https://api.lever.co/v0/postings/${s}?mode=json&limit=1`, { retries: 1 }))) throw new Error('not a board'); },
+};
+export interface ImportResult { lines: string[]; ok: number; miss: number; dbErrors: number; fatal?: string }
+
+/** Verify each CSV slug (slug,name,country_hint[,ats_type]) against Greenhouse/Lever; save only boards that respond. Safe to re-run. */
+export async function importCompanies(csv: string): Promise<ImportResult> {
+  const lines: string[] = [];
+  const say = (s: string) => { lines.push(s); console.log(s); };
+  const res: ImportResult = { lines, ok: 0, miss: 0, dbErrors: 0 };
+  const stop = (m: string) => { say(m); res.fatal = m; return res; };
+  const url = process.env.SUPABASE_URL, key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!url || !key) return stop('STOP: SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY is not set.');
+  say(`Database: ${url} | key starts with "${key.slice(0, 10)}…" (should start with sb_secret_ or eyJ)`);
+  if (key.startsWith('sb_publishable_')) return stop('STOP: the key is the PUBLISHABLE key. Use the SECRET key (starts sb_secret_).');
+  const db = createClient(url, key, { auth: { persistSession: false } });
+  const read = await db.from('companies').select('id').limit(1);
+  if (read.error) return stop(`STOP: cannot read the companies table: ${read.error.message} (wrong URL or key, or the SQL setup did not run?)`);
+
+  const rows = csv.split('\n').slice(1).map(l => l.trim()).filter(Boolean).map(l => l.split(',').map(x => x.trim()));
+  await pool(rows, 4, async ([slug, name, hint, ats]) => {
+    for (const type of ats ? [ats] : Object.keys(probe)) {
+      try { await probe[type](slug); } catch { continue; } // no board on this ATS; try the next
+      const { error } = await db.from('companies').upsert({ slug, ats_type: type, name, country_hint: hint || null, active: true, verified_at: new Date().toISOString(), error_count: 0 }, { onConflict: 'ats_type,slug' });
+      if (error) { res.dbErrors++; if (res.dbErrors <= 3) say(`DATABASE ERROR saving ${name}: ${error.message}`); return; }
+      res.ok++; say(`✓ ${name} (${type}:${slug})`); return;
+    }
+    res.miss++; say(`✗ ${name} (${slug}): no Greenhouse/Lever board found`);
+  });
+  say(`\nActivated ${res.ok}, not found ${res.miss}, database errors ${res.dbErrors}.`);
+  return res;
+}
