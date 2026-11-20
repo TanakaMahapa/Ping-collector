@@ -1,0 +1,569 @@
+[
+{
+"city": "Johannesburg",
+"region": "Gauteng",
+"country": "ZA",
+"aliases": [
+"Joburg",
+"Jozi",
+"Jhb"
+]
+},
+{
+"city": "Pretoria",
+"region": "Gauteng",
+"country": "ZA",
+"aliases": [
+"Tshwane",
+"Pta"
+]
+},
+{
+"city": "Sandton",
+"region": "Gauteng",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Midrand",
+"region": "Gauteng",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Centurion",
+"region": "Gauteng",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Benoni",
+"region": "Gauteng",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Boksburg",
+"region": "Gauteng",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Brakpan",
+"region": "Gauteng",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Germiston",
+"region": "Gauteng",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Kempton Park",
+"region": "Gauteng",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Roodepoort",
+"region": "Gauteng",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Randburg",
+"region": "Gauteng",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Soweto",
+"region": "Gauteng",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Springs",
+"region": "Gauteng",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Vereeniging",
+"region": "Gauteng",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Krugersdorp",
+"region": "Gauteng",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Alberton",
+"region": "Gauteng",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Edenvale",
+"region": "Gauteng",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Bedfordview",
+"region": "Gauteng",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Fourways",
+"region": "Gauteng",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Rosebank",
+"region": "Gauteng",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Randfontein",
+"region": "Gauteng",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Vanderbijlpark",
+"region": "Gauteng",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Mamelodi",
+"region": "Gauteng",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Cape Town",
+"region": "Western Cape",
+"country": "ZA",
+"aliases": [
+"CPT",
+"Kaapstad"
+]
+},
+{
+"city": "Stellenbosch",
+"region": "Western Cape",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Paarl",
+"region": "Western Cape",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Somerset West",
+"region": "Western Cape",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Bellville",
+"region": "Western Cape",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Durbanville",
+"region": "Western Cape",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "George",
+"region": "Western Cape",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Mossel Bay",
+"region": "Western Cape",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Worcester",
+"region": "Western Cape",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Hermanus",
+"region": "Western Cape",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Franschhoek",
+"region": "Western Cape",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Knysna",
+"region": "Western Cape",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Malmesbury",
+"region": "Western Cape",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Century City",
+"region": "Western Cape",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Durban",
+"region": "KwaZulu-Natal",
+"country": "ZA",
+"aliases": [
+"Ethekwini"
+]
+},
+{
+"city": "Pietermaritzburg",
+"region": "KwaZulu-Natal",
+"country": "ZA",
+"aliases": [
+"PMB"
+]
+},
+{
+"city": "Umhlanga",
+"region": "KwaZulu-Natal",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Richards Bay",
+"region": "KwaZulu-Natal",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Pinetown",
+"region": "KwaZulu-Natal",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Ballito",
+"region": "KwaZulu-Natal",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Newcastle",
+"region": "KwaZulu-Natal",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Ladysmith",
+"region": "KwaZulu-Natal",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Westville",
+"region": "KwaZulu-Natal",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Amanzimtoti",
+"region": "KwaZulu-Natal",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Gqeberha",
+"region": "Eastern Cape",
+"country": "ZA",
+"aliases": [
+"Port Elizabeth",
+"PE"
+]
+},
+{
+"city": "East London",
+"region": "Eastern Cape",
+"country": "ZA",
+"aliases": [
+"Buffalo City"
+]
+},
+{
+"city": "Mthatha",
+"region": "Eastern Cape",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Makhanda",
+"region": "Eastern Cape",
+"country": "ZA",
+"aliases": [
+"Grahamstown"
+]
+},
+{
+"city": "Jeffreys Bay",
+"region": "Eastern Cape",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Komani",
+"region": "Eastern Cape",
+"country": "ZA",
+"aliases": [
+"Queenstown"
+]
+},
+{
+"city": "Bloemfontein",
+"region": "Free State",
+"country": "ZA",
+"aliases": [
+"Mangaung"
+]
+},
+{
+"city": "Welkom",
+"region": "Free State",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Bethlehem",
+"region": "Free State",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Kroonstad",
+"region": "Free State",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Polokwane",
+"region": "Limpopo",
+"country": "ZA",
+"aliases": [
+"Pietersburg"
+]
+},
+{
+"city": "Tzaneen",
+"region": "Limpopo",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Thohoyandou",
+"region": "Limpopo",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Mokopane",
+"region": "Limpopo",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Phalaborwa",
+"region": "Limpopo",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Mbombela",
+"region": "Mpumalanga",
+"country": "ZA",
+"aliases": [
+"Nelspruit"
+]
+},
+{
+"city": "eMalahleni",
+"region": "Mpumalanga",
+"country": "ZA",
+"aliases": [
+"Witbank"
+]
+},
+{
+"city": "Secunda",
+"region": "Mpumalanga",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Middelburg",
+"region": "Mpumalanga",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Ermelo",
+"region": "Mpumalanga",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Standerton",
+"region": "Mpumalanga",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Rustenburg",
+"region": "North West",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Potchefstroom",
+"region": "North West",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Klerksdorp",
+"region": "North West",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Mahikeng",
+"region": "North West",
+"country": "ZA",
+"aliases": [
+"Mafikeng"
+]
+},
+{
+"city": "Brits",
+"region": "North West",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Kimberley",
+"region": "Northern Cape",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Upington",
+"region": "Northern Cape",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Springbok",
+"region": "Northern Cape",
+"country": "ZA",
+"aliases": []
+},
+{
+"city": "Lagos",
+"region": "Lagos",
+"country": "NG",
+"aliases": []
+},
+{
+"city": "Abuja",
+"region": "FCT",
+"country": "NG",
+"aliases": []
+},
+{
+"city": "Nairobi",
+"region": "Nairobi",
+"country": "KE",
+"aliases": []
+},
+{
+"city": "Accra",
+"region": "Greater Accra",
+"country": "GH",
+"aliases": []
+},
+{
+"city": "Windhoek",
+"region": "Khomas",
+"country": "NA",
+"aliases": []
+},
+{
+"city": "Gaborone",
+"region": "South-East",
+"country": "BW",
+"aliases": []
+},
+{
+"city": "London",
+"region": "England",
+"country": "GB",
+"aliases": []
+},
+{
+"city": "Berlin",
+"region": "Berlin",
+"country": "DE",
+"aliases": []
+},
+{
+"city": "New York",
+"region": "New York",
+"country": "US",
+"aliases": []
+},
+{
+"city": "San Francisco",
+"region": "California",
+"country": "US",
+"aliases": []
+},
+{
+"city": "Toronto",
+"region": "Ontario",
+"country": "CA",
+"aliases": []
+},
+{
+"city": "Sydney",
+"region": "New South Wales",
+"country": "AU",
+"aliases": []
+}
+]
