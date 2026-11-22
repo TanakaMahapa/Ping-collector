@@ -3,7 +3,7 @@ import type { JobRow, Store } from '../models/store.js';
 import { dedupeHash } from '../models/normalize.js';
 
 /** Sources whose apply link goes straight to the employer. They win cross-source duplicates. */
-export const DIRECT_SOURCES = new Set(['greenhouse', 'lever', 'ashby', 'workable']);
+export const DIRECT_SOURCES = new Set(['greenhouse', 'lever', 'ashby', 'workable', 'oracle', 'smartrecruiters', 'recruitee', 'jsonld']);
 export const EXPIRE_AFTER_MISSED_POLLS = 2;
 
 export async function ingest(store: Store, batch: Batch, now = new Date()) {

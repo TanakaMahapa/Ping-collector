@@ -15,9 +15,9 @@ export function normalizeRemotive(j: any): NormalizedJob {
   };
 }
 
-// Remotive asks for sparing use (a few calls/day recommended), so the default interval is 60 min, configurable.
+// Remotive asks for sparing use (a few calls/day recommended), so the default interval is 360 min (4 requests a day, as Remotive asks).
 export const remotive: Adapter = {
-  id: 'remotive', lane: 'slow', intervalMinutes: Number(process.env.REMOTIVE_INTERVAL_MIN ?? 60), enabled: () => true,
+  id: 'remotive', lane: 'slow', intervalMinutes: Number(process.env.REMOTIVE_INTERVAL_MIN ?? 360), enabled: () => true,
   async poll(ctx) {
     const data = await fetchJson<{ jobs: any[] }>('https://remotive.com/api/remote-jobs');
     await ctx.emit({ source: 'remotive', scope: 'remotive:all', complete: true, jobs: data.jobs.map(normalizeRemotive) });

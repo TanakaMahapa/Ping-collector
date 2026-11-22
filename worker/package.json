@@ -7,7 +7,8 @@
     "typecheck": "tsc --noEmit",
     "test": "tsc && node --test \"dist/test/*.test.js\"",
     "poll": "node dist/run.js",
-    "companies:import": "node dist/scripts/import-companies.js ../data/companies.csv"
+    "companies:import": "node dist/scripts/import-companies.js ../data/companies.csv",
+    "companies:detect": "node dist/scripts/detect-ats.js ../data/sa-targets.csv ./detect-out"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.0"

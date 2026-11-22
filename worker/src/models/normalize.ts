@@ -57,3 +57,11 @@ export function parseLocation(text: string | null | undefined, countryHint: stri
   if (!out.country && !out.is_remote) out.country = countryHint;
   return out;
 }
+
+/** Parse a date from a source into an ISO string, or null if it is missing or unreadable. Assumes UTC when no zone is given. */
+export function safeIso(v: unknown): string | null {
+  if (v === null || v === undefined || v === '') return null;
+  const s = typeof v === 'number' ? new Date(v < 1e12 ? v * 1000 : v) : new Date(/[zZ]|[+-]\d\d:?\d\d$/.test(String(v)) ? String(v) : String(v).replace(' ', 'T') + 'Z');
+  return isNaN(s.getTime()) ? null : s.toISOString();
+}
+export const nonNull = <T,>(x: T | null | undefined): x is T => x !== null && x !== undefined;
